@@ -19,5 +19,4 @@ public class PetConfig {
     Cheetah getCheetahQualifier() {
         return new Cheetah();
     }
-
 }

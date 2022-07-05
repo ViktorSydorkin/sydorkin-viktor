@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OtherBeanB {
 
-    BeanB beanB;
+    private BeanB beanB;
 
     @Autowired
     public void setBeanB(BeanB beanB) {
