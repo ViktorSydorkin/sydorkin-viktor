@@ -20,6 +20,7 @@ import java.util.List;
 @Api(tags = "API description for User controller")
 public class UserController {
     private final UserService userService;
+
     @ApiOperation("Get user by email")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/user/{email}")
@@ -32,6 +33,7 @@ public class UserController {
         }
 
     }
+
     @ApiOperation("Get all users")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/user")
@@ -61,8 +63,8 @@ public class UserController {
     @PutMapping("/user/")
     public void updateUser(@RequestBody @Valid UserDTO userDTO) {
         try {
-        log.info("Update user {}", userDTO);
-        userService.updateUser(userDTO);
+            log.info("Update user {}", userDTO);
+            userService.updateUser(userDTO);
         } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
@@ -72,8 +74,8 @@ public class UserController {
     @DeleteMapping("/user/{id}")
     public void deleteUser(@PathVariable long id) {
         try {
-        log.info("Delete user {}", id);
-        userService.deleteUser(id);
+            log.info("Delete user {}", id);
+            userService.deleteUser(id);
         } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }

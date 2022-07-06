@@ -25,7 +25,6 @@ public class StaffServiceImpl implements StaffService {
         return staffRepository.getAllStaff().stream().map(StaffMapper.INSTANCE::toDTO).collect(Collectors.toList());
     }
 
-
     @Override
     public synchronized void addStaff(StaffDTO staffDTO) {
         log.info("Add staff {}", staffDTO);
@@ -40,11 +39,6 @@ public class StaffServiceImpl implements StaffService {
         staffRepository.updateStaff(StaffMapper.INSTANCE.fromDTO(staffDTO));
     }
 
-    /**
-     * Removes staff from the DB
-     *
-     * @param id - id of the staff to be removed
-     */
     @Override
     public synchronized void deleteStaff(long id) {
         log.info("Staff was removed {}", id);

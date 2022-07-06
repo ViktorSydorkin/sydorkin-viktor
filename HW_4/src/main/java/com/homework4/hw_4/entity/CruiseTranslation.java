@@ -10,15 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CruiseTranslation {
-    /**
-     * The language of cruise's translations
-     *
-     * @see Language
-     */
+
     Language language;
-    /**
-     * The translated cruise's title
-     */
+
     String title;
 
 }

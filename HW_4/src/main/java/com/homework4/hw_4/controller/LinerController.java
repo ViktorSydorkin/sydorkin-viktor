@@ -46,7 +46,7 @@ public class LinerController {
         try {
             log.info("Add liner {}", linerDTO);
             linerService.addLiner(linerDTO);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -57,7 +57,7 @@ public class LinerController {
         try {
             log.info("Update liner {}", linerDTO);
             linerService.updateLiner(linerDTO);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -67,7 +67,7 @@ public class LinerController {
         try {
             log.info("Delete liner {}", id);
             linerService.deleteLiner(id);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }

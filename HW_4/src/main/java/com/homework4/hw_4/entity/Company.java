@@ -10,13 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Company {
-    /**
-     * Id of the company id DB
-     */
+
     private long id;
-    /**
-     * Company's title
-     */
+
     private String title;
 
 }

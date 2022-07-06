@@ -18,23 +18,27 @@ import java.sql.Timestamp;
 public class CruiseDTO {
 
     public long id;
+
     @NotNull
     @Future
     public Timestamp start;
+
     @NotNull
     @Future
     public Timestamp end;
+
     @NotNull
     @Positive
     public int price;
+
     @NotNull
     @Min(0)
     public int available;
+
     @NotNull
     public RouteDTO route;
+
     @NotNull
     public LinerDTO liner;
-
-    //private List<CruiseTranslation> cruiseTranslationList;
 
 }

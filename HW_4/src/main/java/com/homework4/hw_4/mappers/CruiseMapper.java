@@ -7,9 +7,11 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface CruiseMapper {
+
     CruiseMapper INSTANCE = Mappers.getMapper(CruiseMapper.class);
 
     CruiseDTO toDTO(Cruise cruise);
 
     Cruise fromDTO(CruiseDTO cruiseDTO);
+
 }

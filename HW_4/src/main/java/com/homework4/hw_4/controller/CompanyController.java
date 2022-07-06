@@ -1,6 +1,5 @@
 package com.homework4.hw_4.controller;
 
-
 import com.homework4.hw_4.entity.dto.CompanyDTO;
 import com.homework4.hw_4.entity.exception.ControllerException;
 import com.homework4.hw_4.entity.exception.ServiceException;
@@ -24,7 +23,7 @@ public class CompanyController {
         try {
             log.info("Get all companies");
             return companyService.geAllCompanies();
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }

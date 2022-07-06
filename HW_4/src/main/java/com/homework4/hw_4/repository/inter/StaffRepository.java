@@ -5,6 +5,7 @@ import com.homework4.hw_4.entity.Staff;
 import java.util.List;
 
 public interface StaffRepository {
+
     List<Staff> getAllStaff();
 
     void addStaff(Staff staff);
@@ -12,4 +13,5 @@ public interface StaffRepository {
     void updateStaff(Staff staff);
 
     void deleteStaff(long id);
+
 }

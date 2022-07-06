@@ -5,6 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.regex.Pattern;
 
 public class EmailCheck implements ConstraintValidator<EmailValidation, String> {
+
     @Override
     public void initialize(EmailValidation constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);

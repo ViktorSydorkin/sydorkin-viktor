@@ -7,9 +7,11 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface LinerMapper {
+
     LinerMapper INSTANCE = Mappers.getMapper(LinerMapper.class);
 
     LinerDTO toDTO(Liner liner);
 
     Liner fromDTO(LinerDTO linerDTO);
+
 }

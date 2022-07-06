@@ -19,13 +19,20 @@ import java.io.InputStream;
 public class ApplicationDTO {
 
     public long id;
+
     public InputStream pass_photo;
+
     public Approved approved;
+
     public Closed closed;
+
     public Paid paid;
+
     public Ended ended;
+
     @NotNull
     public UserDTO user;
+
     @NotNull
     public CruiseDTO cruise;
 

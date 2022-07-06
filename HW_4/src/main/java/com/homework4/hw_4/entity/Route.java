@@ -12,18 +12,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Route {
-    /**
-     * Id of the route in DB
-     */
+
     private long id;
-    /**
-     * Amount of the ports along the route
-     */
+
     private int port_amount;
-    /**
-     * List of route's translation
-     *
-     * @see RouteTranslation
-     */
+
     private List<RouteTranslation> routeTranslationList;
 }

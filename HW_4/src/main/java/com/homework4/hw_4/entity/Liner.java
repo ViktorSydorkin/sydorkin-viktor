@@ -12,25 +12,15 @@ import java.io.InputStream;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Liner {
-    /**
-     * Id of the liner id DB
-     */
+
     private long id;
-    /**
-     * Liner's capacity
-     */
+
     private int capacity;
-    /**
-     * Liner's name
-     */
+
     private String name;
-    /**
-     * Amount of liner's daecks
-     */
+
     private int deck_amount;
-    /**
-     * Photo of the liner
-     */
+
     private InputStream liner_photo;
 
 }

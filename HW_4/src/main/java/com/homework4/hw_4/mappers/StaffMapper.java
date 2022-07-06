@@ -7,9 +7,11 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface StaffMapper {
+
     StaffMapper INSTANCE = Mappers.getMapper(StaffMapper.class);
 
     StaffDTO toDTO(Staff staff);
 
     Staff fromDTO(StaffDTO staffDTO);
+
 }

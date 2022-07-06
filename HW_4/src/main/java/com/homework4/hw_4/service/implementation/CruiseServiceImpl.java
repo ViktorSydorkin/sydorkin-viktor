@@ -19,7 +19,7 @@ public class CruiseServiceImpl implements CruiseService {
     private final CruiseRepository cruiseRepository;
 
     @Override
-    public List<CruiseDTO> getAllCruise(/*long lang_id, int start, int amount*/) {
+    public List<CruiseDTO> getAllCruise() {
         log.info("Get all cruises");
         return cruiseRepository.getAllCruise().stream().map(CruiseMapper.INSTANCE::toDTO).collect(Collectors.toList());
     }
@@ -38,24 +38,21 @@ public class CruiseServiceImpl implements CruiseService {
     }
 
     @Override
-    public CruiseDTO getCruiseById(/*long lang_id,*/ long cruise_id) {
+    public CruiseDTO getCruiseById(long cruise_id) {
         log.info("Get cruise by id {}", cruise_id);
         return CruiseMapper.INSTANCE.toDTO(cruiseRepository.getCruiseById(cruise_id));
     }
 
     @Override
-    public synchronized void updateCruise(/*long lang_id,*/ CruiseDTO cruiseDTO) {
+    public synchronized void updateCruise(CruiseDTO cruiseDTO) {
         log.info("Cruise was updated {}", cruiseDTO);
         System.out.println("Cruise " + cruiseDTO + "was updated");
         cruiseRepository.updateCruise(CruiseMapper.INSTANCE.fromDTO(cruiseDTO));
     }
-
 
     @Override
     public synchronized void deleteCruise(long cruise_id) {
         log.info("Cruise was removed {}", cruise_id);
         System.out.println("Cruise " + cruise_id + "was removed");
     }
-
-
 }

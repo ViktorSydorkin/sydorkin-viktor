@@ -5,9 +5,8 @@ import com.homework4.hw_4.entity.User;
 import java.util.List;
 
 public interface UserRepository {
-    User getUserByEmail(String email);
 
-    //User getUserByEmailAndPassword(String email, String password);
+    User getUserByEmail(String email);
 
     List<User> getAllUsers();
 
@@ -15,7 +14,6 @@ public interface UserRepository {
 
     void updateUser(User user);
 
-    //String passEncryption(String email, String password);
-
     void deleteUser(long id);
+
 }

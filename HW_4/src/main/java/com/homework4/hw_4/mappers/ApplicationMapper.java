@@ -7,9 +7,11 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface ApplicationMapper {
+
     ApplicationMapper INSTANCE = Mappers.getMapper(ApplicationMapper.class);
 
     ApplicationDTO toDTO(Application application);
 
     Application fromDTO(ApplicationDTO applicationDTO);
+
 }

@@ -17,4 +17,5 @@ public @interface EmailValidation {
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+
 }

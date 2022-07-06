@@ -24,7 +24,7 @@ public class ApplicationController {
         try {
             log.info("Get application {}", id);
             return applicationService.getApplicationById(id);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -35,7 +35,7 @@ public class ApplicationController {
         try {
             log.info("Get all applications");
             return applicationService.getAllApplications();
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -46,7 +46,7 @@ public class ApplicationController {
         try {
             log.info("Create application {}", applicationDTO);
             applicationService.addApplication(applicationDTO);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -57,7 +57,7 @@ public class ApplicationController {
         try {
             log.info("Change application {} {}", id, state);
             applicationService.changeApplication(id, state);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -68,7 +68,7 @@ public class ApplicationController {
         try {
             log.info("Update application {}", applicationDTO);
             applicationService.updateApplication(applicationDTO);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -78,7 +78,7 @@ public class ApplicationController {
         try {
             log.info("Delete application {}", id);
             applicationService.deleteApplication(id);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }

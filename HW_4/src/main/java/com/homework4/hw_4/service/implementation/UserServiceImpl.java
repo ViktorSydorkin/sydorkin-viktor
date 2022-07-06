@@ -25,13 +25,11 @@ public class UserServiceImpl implements UserService {
         return UserMapper.INSTANCE.toDTO(userRepository.getUserByEmail(email));
     }
 
-
     @Override
     public List<UserDTO> getAllUsers() {
         log.info("Get all users");
         return userRepository.getAllUsers().stream().map(UserMapper.INSTANCE::toDTO).collect(Collectors.toList());
     }
-
 
     @Override
     public synchronized void addUser(UserDTO userDTO) {
@@ -40,13 +38,11 @@ public class UserServiceImpl implements UserService {
         userRepository.addUser(UserMapper.INSTANCE.fromDTO(userDTO));
     }
 
-
     @Override
     public synchronized void updateUser(UserDTO userDTO) {
         log.info("Update user {}", userDTO);
         System.out.println("User " + userDTO + " was updated");
     }
-
 
     @Override
     public synchronized void deleteUser(long id) {

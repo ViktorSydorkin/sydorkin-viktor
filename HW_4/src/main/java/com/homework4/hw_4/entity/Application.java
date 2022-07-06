@@ -16,49 +16,21 @@ import java.io.InputStream;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Application {
-    /**
-     * Id of application in the DB
-     */
+
     private long id;
-    /**
-     * Photo of the user's passport
-     */
+
     private InputStream pass_photo;
-    /**
-     * State of application (Yes/No)
-     *
-     * @see Approved
-     */
+
     private Approved approved;
-    /**
-     * State of application (Closed/Opened)
-     *
-     * @see Closed
-     */
+
     private Closed closed;
-    /**
-     * State of application (Paid/Unpaid)
-     *
-     * @see Paid
-     */
+
     private Paid paid;
-    /**
-     * State of application (Yes/No)
-     *
-     * @see Ended
-     */
+
     private Ended ended;
-    /**
-     * User that applied for the cruise
-     *
-     * @see User
-     */
+
     private User user;
-    /**
-     * Cruise the user applied for
-     *
-     * @see Cruise
-     */
+
     private Cruise cruise;
 
 }

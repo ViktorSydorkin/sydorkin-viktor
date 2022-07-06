@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,13 +32,11 @@ public class LinerServiceImpl implements LinerService {
         return LinerMapper.INSTANCE.toDTO(linerRepository.getLinerById(liner_id));
     }
 
-
     @Override
-    public List<LinerDTO> getAllLiners(/*long lang_id*/) {
+    public List<LinerDTO> getAllLiners() {
         log.info("Get all liners");
         return linerRepository.getAllLiners().stream().map(LinerMapper.INSTANCE::toDTO).collect(Collectors.toList());
     }
-
 
     @Override
     public synchronized void updateLiner(LinerDTO linerDTO) {

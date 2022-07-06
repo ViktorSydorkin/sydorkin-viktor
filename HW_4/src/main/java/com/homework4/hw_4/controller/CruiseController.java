@@ -24,7 +24,7 @@ public class CruiseController {
         try {
             log.info("Get cruise by id {}", id);
             return cruiseService.getCruiseById(id);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -35,7 +35,7 @@ public class CruiseController {
         try {
             log.info("Get all cruises");
             return cruiseService.getAllCruise();
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -46,7 +46,7 @@ public class CruiseController {
         try {
             log.info("Create cruise {}", cruiseDTO);
             cruiseService.addCruise(cruiseDTO);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -57,7 +57,7 @@ public class CruiseController {
         try {
             log.info("Change cruise {}", id);
             cruiseService.changeAvailability(id);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -68,7 +68,7 @@ public class CruiseController {
         try {
             log.info("Update cruise {}", cruiseDTO);
             cruiseService.updateCruise(cruiseDTO);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }
@@ -78,7 +78,7 @@ public class CruiseController {
         try {
             log.info("Delete cruise {}", id);
             cruiseService.deleteCruise(id);
-        }catch (ServiceException serviceException){
+        } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
     }

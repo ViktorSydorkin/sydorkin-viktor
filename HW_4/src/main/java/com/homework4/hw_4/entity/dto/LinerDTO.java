@@ -17,15 +17,18 @@ import java.io.InputStream;
 public class LinerDTO {
 
     public long id;
+
     @NotNull
     @Positive
     public int capacity;
+
     @NotBlank
     public String name;
 
     @NotNull
     @Positive
     public int deck_amount;
+
     @NotNull
     public InputStream liner_photo;
 

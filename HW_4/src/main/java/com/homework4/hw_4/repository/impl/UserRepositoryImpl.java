@@ -5,6 +5,7 @@ import com.homework4.hw_4.repository.inter.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
@@ -20,16 +21,13 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void addUser(User user) {
-
     }
 
     @Override
     public void updateUser(User user) {
-
     }
 
     @Override
     public void deleteUser(long id) {
-
     }
 }

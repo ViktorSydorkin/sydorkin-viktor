@@ -32,9 +32,9 @@ public class StaffController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/staff")
     public void createStaff(@RequestBody @Valid StaffDTO staffDTO) {
-        try{
-        log.info("Add staff {}", staffDTO);
-        staffService.addStaff(staffDTO);
+        try {
+            log.info("Add staff {}", staffDTO);
+            staffService.addStaff(staffDTO);
         } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
@@ -43,9 +43,9 @@ public class StaffController {
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/staff")
     public void updateStaff(@RequestBody @Valid StaffDTO staffDTO) {
-        try{
-        log.info("Update staff {}", staffDTO);
-        staffService.updateStaff(staffDTO);
+        try {
+            log.info("Update staff {}", staffDTO);
+            staffService.updateStaff(staffDTO);
         } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
@@ -53,9 +53,9 @@ public class StaffController {
 
     @DeleteMapping("/staff/{id}")
     public void deleteLiner(@PathVariable long id) {
-        try{
-        log.info("Delete staff {}", id);
-        staffService.deleteStaff(id);
+        try {
+            log.info("Delete staff {}", id);
+            staffService.deleteStaff(id);
         } catch (ServiceException serviceException) {
             throw new ControllerException(serviceException.getMessage());
         }
