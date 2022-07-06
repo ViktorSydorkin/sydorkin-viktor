@@ -1,11 +1,11 @@
 package com.homework3.hw_3.repository.inter;
 
 import com.homework3.hw_3.entity.Staff;
-import com.homework3.hw_3.entity.dto.StaffDTO;
 
 import java.util.List;
 
 public interface StaffRepository {
+
     List<Staff> getAllStaff();
 
     void addStaff(Staff staff);
@@ -13,4 +13,5 @@ public interface StaffRepository {
     void updateStaff(Staff staff);
 
     void deleteStaff(long id);
+
 }

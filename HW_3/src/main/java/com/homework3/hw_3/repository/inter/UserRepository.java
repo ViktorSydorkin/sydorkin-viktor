@@ -1,14 +1,12 @@
 package com.homework3.hw_3.repository.inter;
 
 import com.homework3.hw_3.entity.User;
-import com.homework3.hw_3.entity.dto.UserDTO;
 
 import java.util.List;
 
 public interface UserRepository {
-    User getUserByEmail(String email);
 
-    //User getUserByEmailAndPassword(String email, String password);
+    User getUserByEmail(String email);
 
     List<User> getAllUsers();
 
@@ -16,7 +14,6 @@ public interface UserRepository {
 
     void updateUser(User user);
 
-    //String passEncryption(String email, String password);
-
     void deleteUser(long id);
+
 }

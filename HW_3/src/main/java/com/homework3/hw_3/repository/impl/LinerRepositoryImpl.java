@@ -6,9 +6,9 @@ import com.homework3.hw_3.repository.inter.LinerRepository;
 import java.util.List;
 
 public class LinerRepositoryImpl implements LinerRepository {
+
     @Override
     public void addLiner(Liner liner) {
-
     }
 
     @Override
@@ -23,11 +23,9 @@ public class LinerRepositoryImpl implements LinerRepository {
 
     @Override
     public void updateLiner(Liner liner) {
-
     }
 
     @Override
     public void deleteLiner(long liner_id) {
-
     }
 }

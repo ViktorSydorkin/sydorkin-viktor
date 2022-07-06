@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
-import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -26,7 +26,5 @@ public class CruiseDTO {
     public RouteDTO route;
 
     public LinerDTO liner;
-
-    //private List<CruiseTranslation> cruiseTranslationList;
 
 }

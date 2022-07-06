@@ -11,39 +11,39 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Slf4j
-@RestController(value = "/cruiseCompany")
+@RestController(value = "/liner")
 @RequiredArgsConstructor
 public class LinerController {
     private final LinerService linerService;
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/liner/{id}")
+    @GetMapping("/{id}")
     public LinerDTO getLinerById(@PathVariable long id) {
         log.info("get liner by id {}", id);
         return linerService.getLinerById(id);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/liner/")
+    @GetMapping("/")
     public List<LinerDTO> getAllCruises() {
         log.info("Get all liners");
         return linerService.getAllLiners();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/liner/")
+    @PostMapping("/")
     public void createLiner(@RequestBody LinerDTO linerDTO) {
         log.info("Add liner {}", linerDTO);
         linerService.addLiner(linerDTO);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/liner/}")
+    @PutMapping("/}")
     public void updateLiner(@RequestBody LinerDTO linerDTO) {
         log.info("Update liner {}", linerDTO);
         linerService.updateLiner(linerDTO);
     }
 
-    @DeleteMapping("/liner/{id}")
+    @DeleteMapping("/{id}")
     public void deleteLiner(@PathVariable long id) {
         log.info("Delete liner {}", id);
         linerService.deleteLiner(id);

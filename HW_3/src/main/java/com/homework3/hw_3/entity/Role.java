@@ -10,13 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Role {
-    /**
-     * Id of the role id DB
-     */
+
     private long id;
-    /**
-     * Type of the role
-     */
+
     protected String type;
 
 }

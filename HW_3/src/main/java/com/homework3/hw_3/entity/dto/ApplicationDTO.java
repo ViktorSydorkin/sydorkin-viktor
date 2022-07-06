@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.InputStream;
+
 @Data
 @Builder
 @NoArgsConstructor

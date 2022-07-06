@@ -10,13 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CompanyDTO {
-    /**
-     * Id of the company id DB
-     */
+
     public long id;
-    /**
-     * Company's title
-     */
+
     public String title;
 
 }

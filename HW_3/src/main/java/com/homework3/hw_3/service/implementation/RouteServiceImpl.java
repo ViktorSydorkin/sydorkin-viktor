@@ -23,7 +23,7 @@ public class RouteServiceImpl implements RouteService {
     private final RouteRepository routeRepository;
 
     @Override
-    public List<RouteDTO> getAllRoutes(/*long lang_id*/) {
+    public List<RouteDTO> getAllRoutes() {
         log.info("Get all routes");
         return routeRepository.getAllRoutes().stream().map(RouteMapper.INSTANCE::toDTO).collect(Collectors.toList());
     }

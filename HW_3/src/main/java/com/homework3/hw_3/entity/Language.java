@@ -10,13 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Language {
-    /**
-     * Id of language in DB
-     */
+
     long id;
-    /**
-     * Language title
-     */
+
     String language;
 
 }

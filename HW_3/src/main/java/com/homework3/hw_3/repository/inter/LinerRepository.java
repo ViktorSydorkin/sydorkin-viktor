@@ -6,13 +6,15 @@ import com.homework3.hw_3.entity.dto.LinerDTO;
 import java.util.List;
 
 public interface LinerRepository {
+
     void addLiner(Liner liner);
 
     Liner getLinerById(long liner_id);
 
-    List<Liner> getAllLiners(/*long lang_id*/);
+    List<Liner> getAllLiners();
 
     void updateLiner(Liner liner);
 
     void deleteLiner(long liner_id);
+
 }

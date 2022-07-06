@@ -13,16 +13,13 @@ public class StaffRepositoryImpl implements StaffRepository {
 
     @Override
     public void addStaff(Staff staff) {
-
     }
 
     @Override
     public void updateStaff(Staff staff) {
-
     }
 
     @Override
     public void deleteStaff(long id) {
-
     }
 }
