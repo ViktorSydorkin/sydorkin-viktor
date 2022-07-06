@@ -16,18 +16,21 @@ import java.util.Objects;
 public class Config1 {
     @Autowired
     Environment environment;
+
     @Bean(initMethod = "initBeanB", destroyMethod = "destroyBeanB")
     @DependsOn("beanD")
-    public BeanB beanB(){
+    public BeanB beanB() {
         return new BeanB(environment.getProperty("beanb.name"), Integer.parseInt(Objects.requireNonNull(environment.getProperty("beanb.value"))));
     }
+
     @Bean(initMethod = "initBeanC", destroyMethod = "destroyBeanC")
     @DependsOn("beanB")
-    public BeanC beanC(){
+    public BeanC beanC() {
         return new BeanC(environment.getProperty("beanc.name"), Integer.parseInt(Objects.requireNonNull(environment.getProperty("beanc.value"))));
     }
+
     @Bean(initMethod = "initBeanD", destroyMethod = "destroyBeanD")
-    public BeanD beanD(){
+    public BeanD beanD() {
         return new BeanD(environment.getProperty("beand.name"), Integer.parseInt(Objects.requireNonNull(environment.getProperty("beand.value"))));
     }
 

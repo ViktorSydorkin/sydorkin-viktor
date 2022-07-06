@@ -4,6 +4,7 @@ public class BeanC extends Bean {
 
     public BeanC() {
     }
+
     public BeanC(String name, int value) {
         super(name, value);
     }

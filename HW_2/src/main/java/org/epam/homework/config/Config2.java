@@ -9,8 +9,7 @@ import org.springframework.context.annotation.*;
 public class Config2 {
     @Bean
     @Lazy
-    public BeanF beanF(){
+    public BeanF beanF() {
         return new BeanF();
     }
-
 }

@@ -1,6 +1,6 @@
 package org.epam.homework.beans;
 
-public class BeanB extends Bean{
+public class BeanB extends Bean {
     public BeanB() {
     }
 

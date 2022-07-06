@@ -3,6 +3,7 @@ package org.epam.homework.beans;
 public class BeanD extends Bean {
     public BeanD() {
     }
+
     public BeanD(String name, int value) {
         super(name, value);
     }
