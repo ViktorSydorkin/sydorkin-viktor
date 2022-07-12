@@ -6,7 +6,11 @@
 
   <groupId>org.example</groupId>
   <artifactId>sydorkin-viktor</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>HW_2</module>
+  </modules>
 
   <name>sydorkin-viktor</name>
   <!-- FIXME change it to the project's website -->
