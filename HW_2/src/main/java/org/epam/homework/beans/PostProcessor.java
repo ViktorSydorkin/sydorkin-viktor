@@ -9,9 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class PostProcessor implements BeanPostProcessor {
 
-    @Autowired
-    private ApplicationContext applicationContext;
-
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof Bean) {
