@@ -5,11 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -22,7 +20,12 @@ public class Route {
     private long id;
 
     private int port_amount;
+
     private String start;
+
     private String end;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "route")
+    private Set<Cruise> cruises;
 
 }

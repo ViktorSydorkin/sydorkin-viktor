@@ -4,8 +4,11 @@ import com.homework5.entity.Company;
 import com.homework5.repository.inter.CompanyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
+@Repository
 @RequiredArgsConstructor
 public class CompanyRepositoryImpl implements CompanyRepository {
     private final JdbcTemplate jdbcTemplate;

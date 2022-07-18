@@ -32,4 +32,7 @@ public class Liner {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_company_id")
     private Company company;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "liner")
+    private Set<Cruise> cruises;
 }

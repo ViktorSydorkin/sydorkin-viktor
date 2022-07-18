@@ -243,14 +243,9 @@ CREATE TABLE `user` (
                         `surname` varchar(45) NOT NULL,
                         `email` varchar(65) NOT NULL,
                         `password` varchar(65) NOT NULL,
-                        `fk_role_id` bigint NOT NULL DEFAULT '1',
-                        `fk_language_id` bigint NOT NULL DEFAULT '1',
+                        `role` enum('USER','ADMIN') NOT NULL DEFAULT 'USER',
                         PRIMARY KEY (`user_id`),
-                        UNIQUE KEY `email_UNIQUE` (`email`),
-                        KEY `fk_user_roles1_idx` (`fk_role_id`),
-                        KEY `fk_language_id_idx` (`fk_language_id`),
-                        CONSTRAINT `fk_language_id` FOREIGN KEY (`fk_language_id`) REFERENCES `language` (`language_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-                        CONSTRAINT `fk_user_role` FOREIGN KEY (`fk_role_id`) REFERENCES `role` (`role_id`) ON DELETE CASCADE ON UPDATE CASCADE
+                        UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -260,7 +255,9 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (13,'Bull','Buller','bull@gmail.com','cbfcb3e769c59bd462f35b2a3beb3aa541501c23',1,2),(16,'Changed','Byadmin','newww@gmail.com','071e3f5c708b7d3a5d9133de53b56b133ba6b0db',1,2),(20,'Adm','Admin','adm@gmail.com','1196c1a3b48828f7dddd75969f8c12c11ba1215f',2,1);
+INSERT INTO `user` VALUES (13,'Bull','Buller','bull@gmail.com','cbfcb3e769c59bd462f35b2a3beb3aa541501c23', 'USER'),
+                           (16,'Changed','Byadmin','newww@gmail.com','071e3f5c708b7d3a5d9133de53b56b133ba6b0db','USER'),
+                           (20,'Adm','Admin','adm@gmail.com','1196c1a3b48828f7dddd75969f8c12c11ba1215f','ADMIN');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

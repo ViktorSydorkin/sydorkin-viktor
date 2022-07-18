@@ -2,15 +2,12 @@ package com.homework5.service.implementation;
 
 import com.homework5.entity.dto.CompanyDTO;
 import com.homework5.mappers.CompanyMapper;
-import com.homework5.mappers.StaffMapper;
 import com.homework5.repository.inter.CompanyRepository;
 import com.homework5.service.inter.CompanyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
