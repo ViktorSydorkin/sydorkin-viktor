@@ -39,7 +39,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDTO> getAllUsers() {
         log.info("Get all users");
-        return userRepository.findAll().stream().map(UserMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        try {
+            return userRepository.findAll().stream().map(UserMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 
     @Override

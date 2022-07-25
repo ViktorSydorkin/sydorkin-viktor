@@ -40,7 +40,12 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public List<ApplicationDTO> getAllApplications() {
         log.info("Get all applications");
-        return applicationRepository.findAll().stream().map(ApplicationMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        try {
+            return applicationRepository.findAll().stream().map(ApplicationMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 
     @Override

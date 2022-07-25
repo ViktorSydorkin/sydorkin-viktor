@@ -1,6 +1,8 @@
 package com.homework5.service.implementation;
 
 import com.homework5.entity.dto.CompanyDTO;
+import com.homework5.entity.exception.RepositoryException;
+import com.homework5.entity.exception.ServiceException;
 import com.homework5.mappers.CompanyMapper;
 import com.homework5.repository.inter.CompanyRepository;
 import com.homework5.service.inter.CompanyService;
@@ -21,6 +23,11 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public List<CompanyDTO> geAllCompanies() {
         log.info("Get all companies");
-        return companyRepository.findAll().stream().map(CompanyMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        try {
+            return companyRepository.findAll().stream().map(CompanyMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 }

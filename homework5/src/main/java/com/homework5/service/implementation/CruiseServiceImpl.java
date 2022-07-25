@@ -29,8 +29,13 @@ public class CruiseServiceImpl implements CruiseService {
     @Override
     public List<CruiseDTO> getAllCruise() {
         log.info("Get all cruises");
-        Pageable pageable = PageRequest.of(0, 6, Sort.by("title"));
-        return cruiseRepository.findAll(pageable).stream().map(CruiseMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        try {
+            Pageable pageable = PageRequest.of(0, 6, Sort.by("title"));
+            return cruiseRepository.findAll(pageable).stream().map(CruiseMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 
     @Transactional(readOnly = true)
@@ -51,19 +56,34 @@ public class CruiseServiceImpl implements CruiseService {
     @Override
     public void saveCruise(CruiseDTO cruiseDTO) {
         log.info("Add cruise {}", cruiseDTO);
-        cruiseRepository.save(CruiseMapper.INSTANCE.fromDTO(cruiseDTO));
+        try {
+            cruiseRepository.save(CruiseMapper.INSTANCE.fromDTO(cruiseDTO));
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 
     @Override
     public CruiseDTO getCruiseById(long cruise_id) {
         log.info("Get cruise by id {}", cruise_id);
-        return CruiseMapper.INSTANCE.toDTO(cruiseRepository.findById(cruise_id).orElseThrow(() -> new RepositoryException("")));
+        try {
+            return CruiseMapper.INSTANCE.toDTO(cruiseRepository.findById(cruise_id).orElseThrow(() -> new RepositoryException("Cruise wasn't found")));
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 
     @Transactional(readOnly = true)
     @Override
     public synchronized void deleteCruise(long cruise_id) {
         log.info("Cruise was removed {}", cruise_id);
-        cruiseRepository.delete(cruiseRepository.findById(cruise_id).orElseThrow(() -> new RepositoryException("")));
+        try {
+            cruiseRepository.delete(cruiseRepository.findById(cruise_id).orElseThrow(() -> new RepositoryException("Cruise wasn't found")));
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 }

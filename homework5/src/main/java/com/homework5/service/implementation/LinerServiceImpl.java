@@ -50,7 +50,12 @@ public class LinerServiceImpl implements LinerService {
     @Override
     public List<LinerDTO> getAllLiners() {
         log.info("Get all liners");
-        return linerRepository.findAll().stream().map(LinerMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        try {
+            return linerRepository.findAll().stream().map(LinerMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 
     @Transactional(readOnly = true)

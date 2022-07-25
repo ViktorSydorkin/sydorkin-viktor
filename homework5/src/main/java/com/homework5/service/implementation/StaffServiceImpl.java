@@ -25,7 +25,12 @@ public class StaffServiceImpl implements StaffService {
     @Override
     public List<StaffDTO> getAllStaff() {
         log.info("Get all staff");
-        return staffRepository.findAll().stream().map(StaffMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        try {
+            return staffRepository.findAll().stream().map(StaffMapper.INSTANCE::toDTO).collect(Collectors.toList());
+        } catch (RepositoryException r) {
+            log.error("Repository has thrown an exception { }", r);
+            throw new ServiceException(r.getMessage());
+        }
     }
 
     @Override
