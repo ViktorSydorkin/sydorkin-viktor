@@ -18,7 +18,7 @@ public class CompanyController {
     private final CompanyService companyService;
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public List<CompanyDTO> getAllCompanies() {
         log.info("Get all companies");
         return companyService.geAllCompanies();

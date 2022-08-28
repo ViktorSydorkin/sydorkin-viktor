@@ -22,7 +22,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public void addApplication(ApplicationDTO applicationDTO) {
         log.info("Add application {}", applicationDTO);
-        System.out.println("Application " + applicationDTO + "was added");
         applicationRepository.addApplication(ApplicationMapper.INSTANCE.fromDTO(applicationDTO));
     }
 
@@ -33,26 +32,26 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public ApplicationDTO getApplicationById(long app_id) {
-        log.info("Get application by id {}", app_id);
-        return ApplicationMapper.INSTANCE.toDTO(applicationRepository.getApplicationById(app_id));
+    public ApplicationDTO getApplicationById(long appId) {
+        log.info("Get application by id {}", appId);
+        return ApplicationMapper.INSTANCE.toDTO(applicationRepository.getApplicationById(appId));
     }
 
     @Override
-    public void changeApplication(long app_id, String state) {
+    public void changeApplication(long appId, String state) {
         log.info("Changed application's state to {}", state);
+        applicationRepository.changeApplication(appId, state);
     }
 
     @Override
     public void updateApplication(ApplicationDTO applicationDTO) {
         log.info("AUpdated application {}", applicationDTO);
-        System.out.println("Application " + applicationDTO + " was updated");
         applicationRepository.updateApplication(ApplicationMapper.INSTANCE.fromDTO(applicationDTO));
     }
 
     @Override
-    public synchronized void deleteApplication(long app_id) {
-        log.info("Application was removed {}", app_id);
-        System.out.println("Application " + app_id + " was removed");
+    public synchronized void deleteApplication(long appId) {
+        log.info("Application was removed {}", appId);
+        applicationRepository.deleteApplication(appId);
     }
 }

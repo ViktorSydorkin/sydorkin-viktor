@@ -23,21 +23,21 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public List<UserDTO> getAllUsers() {
         log.info("Get all users");
         return userService.getAllUsers();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/")
+    @PostMapping
     public void createUser(@RequestBody UserDTO userDTO) {
         log.info("Add user {}", userDTO);
         userService.addUser(userDTO);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/")
+    @PutMapping
     public void updateUser(@RequestBody UserDTO userDTO) {
         log.info("Update user {}", userDTO);
         userService.updateUser(userDTO);

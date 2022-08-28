@@ -28,20 +28,18 @@ public class StaffServiceImpl implements StaffService {
     @Override
     public synchronized void addStaff(StaffDTO staffDTO) {
         log.info("Add staff {}", staffDTO);
-        System.out.println("Staff " + staffDTO + " was added");
         staffRepository.addStaff(StaffMapper.INSTANCE.fromDTO(staffDTO));
     }
 
     @Override
     public synchronized void updateStaff(StaffDTO staffDTO) {
         log.info("Update staff {}", staffDTO);
-        System.out.println("Staff " + staffDTO + " was updated");
         staffRepository.updateStaff(StaffMapper.INSTANCE.fromDTO(staffDTO));
     }
 
     @Override
     public synchronized void deleteStaff(long id) {
         log.info("Staff was removed {}", id);
-        System.out.println("Staff " + id + " was removed");
+        staffRepository.deleteStaff(id);
     }
 }

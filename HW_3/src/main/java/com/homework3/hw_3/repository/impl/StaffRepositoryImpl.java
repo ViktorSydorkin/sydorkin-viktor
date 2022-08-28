@@ -2,9 +2,11 @@ package com.homework3.hw_3.repository.impl;
 
 import com.homework3.hw_3.entity.Staff;
 import com.homework3.hw_3.repository.inter.StaffRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class StaffRepositoryImpl implements StaffRepository {
     @Override
     public List<Staff> getAllStaff() {
@@ -20,6 +22,6 @@ public class StaffRepositoryImpl implements StaffRepository {
     }
 
     @Override
-    public void deleteStaff(long id) {
+    public void deleteStaff(long staffId) {
     }
 }

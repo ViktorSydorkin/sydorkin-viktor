@@ -16,21 +16,21 @@ public class StaffController {
     private final StaffService staffService;
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public List<StaffDTO> getAllStaff() {
         log.info("Get all staff");
         return staffService.getAllStaff();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/")
+    @PostMapping
     public void createStaff(@RequestBody StaffDTO staffDTO) {
         log.info("Add staff {}", staffDTO);
         staffService.addStaff(staffDTO);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/")
+    @PutMapping
     public void updateStaff(@RequestBody StaffDTO staffDTO) {
         log.info("Update staff {}", staffDTO);
         staffService.updateStaff(staffDTO);

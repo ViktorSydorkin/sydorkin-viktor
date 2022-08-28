@@ -2,9 +2,11 @@ package com.homework3.hw_3.repository.impl;
 
 import com.homework3.hw_3.entity.Cruise;
 import com.homework3.hw_3.repository.inter.CruiseRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class CruiseRepositoryImpl implements CruiseRepository {
 
     @Override
@@ -13,7 +15,7 @@ public class CruiseRepositoryImpl implements CruiseRepository {
     }
 
     @Override
-    public void changeAvailability(long cruise_id) {
+    public void changeAvailability(long cruiseId) {
     }
 
     @Override
@@ -21,7 +23,7 @@ public class CruiseRepositoryImpl implements CruiseRepository {
     }
 
     @Override
-    public Cruise getCruiseById(long cruise_id) {
+    public Cruise getCruiseById(long cruiseId) {
         return null;
     }
 
@@ -30,6 +32,6 @@ public class CruiseRepositoryImpl implements CruiseRepository {
     }
 
     @Override
-    public void deleteCruise(long cruise_id) {
+    public void deleteCruise(long cruiseId) {
     }
 }

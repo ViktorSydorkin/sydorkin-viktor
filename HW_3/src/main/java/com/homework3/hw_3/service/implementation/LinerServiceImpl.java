@@ -22,14 +22,13 @@ public class LinerServiceImpl implements LinerService {
     @Override
     public void addLiner(LinerDTO linerDTO) {
         log.info("Add liner {}", linerDTO);
-        System.out.println("Liner " + linerDTO + " was added");
         linerRepository.addLiner(LinerMapper.INSTANCE.fromDTO(linerDTO));
     }
 
     @Override
-    public LinerDTO getLinerById(long liner_id) {
-        log.info("Get liner bu id {}", liner_id);
-        return LinerMapper.INSTANCE.toDTO(linerRepository.getLinerById(liner_id));
+    public LinerDTO getLinerById(long linerId) {
+        log.info("Get liner bu id {}", linerId);
+        return LinerMapper.INSTANCE.toDTO(linerRepository.getLinerById(linerId));
     }
 
     @Override
@@ -40,15 +39,13 @@ public class LinerServiceImpl implements LinerService {
 
     @Override
     public synchronized void updateLiner(LinerDTO linerDTO) {
-
         log.info("Update liner {}", linerDTO);
-        System.out.println("Liner " + linerDTO + " was updated");
         linerRepository.updateLiner(LinerMapper.INSTANCE.fromDTO(linerDTO));
     }
 
     @Override
-    public synchronized void deleteLiner(long liner_id) {
-        log.info("Liner was removed {}", liner_id);
-        System.out.println("Liner " + liner_id + "was removed");
+    public synchronized void deleteLiner(long linerId) {
+        log.info("Liner was removed {}", linerId);
+        linerRepository.deleteLiner(linerId);
     }
 }

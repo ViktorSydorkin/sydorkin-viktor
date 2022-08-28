@@ -23,14 +23,14 @@ public class ApplicationController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public List<ApplicationDTO> getAllApplications() {
         log.info("Get all applications");
         return applicationService.getAllApplications();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/")
+    @PostMapping
     public void createApplication(@RequestBody ApplicationDTO applicationDTO) {
         log.info("Create application {}", applicationDTO);
         applicationService.addApplication(applicationDTO);
@@ -44,7 +44,7 @@ public class ApplicationController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/}")
+    @PutMapping
     public void updateApplication(@RequestBody ApplicationDTO applicationDTO) {
         log.info("Update application {}", applicationDTO);
         applicationService.updateApplication(applicationDTO);

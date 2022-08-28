@@ -18,7 +18,7 @@ public class RouteController {
     private final RouteService routeService;
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public List<RouteDTO> getAllCruises() {
         log.info("Get all routes");
         return routeService.getAllRoutes();

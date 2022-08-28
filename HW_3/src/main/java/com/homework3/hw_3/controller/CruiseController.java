@@ -23,14 +23,14 @@ public class CruiseController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public List<CruiseDTO> getAllCruises() {
         log.info("Get all cruises");
         return cruiseService.getAllCruise();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/")
+    @PostMapping
     public void createCruise(@RequestBody CruiseDTO cruiseDTO) {
         log.info("Create cruise {}", cruiseDTO);
         cruiseService.addCruise(cruiseDTO);
@@ -44,13 +44,13 @@ public class CruiseController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/application/}")
+    @PutMapping
     public void updateCruise(@RequestBody CruiseDTO cruiseDTO) {
         log.info("Update cruise {}", cruiseDTO);
         cruiseService.updateCruise(cruiseDTO);
     }
 
-    @DeleteMapping("/application/{id}")
+    @DeleteMapping("/{id}")
     public void deleteCruise(@PathVariable long id) {
         log.info("Delete cruise {}", id);
         cruiseService.deleteCruise(id);

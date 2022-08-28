@@ -23,21 +23,21 @@ public class LinerController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public List<LinerDTO> getAllCruises() {
         log.info("Get all liners");
         return linerService.getAllLiners();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/")
+    @PostMapping
     public void createLiner(@RequestBody LinerDTO linerDTO) {
         log.info("Add liner {}", linerDTO);
         linerService.addLiner(linerDTO);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/}")
+    @PutMapping
     public void updateLiner(@RequestBody LinerDTO linerDTO) {
         log.info("Update liner {}", linerDTO);
         linerService.updateLiner(linerDTO);

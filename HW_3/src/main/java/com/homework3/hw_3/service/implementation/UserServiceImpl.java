@@ -33,19 +33,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public synchronized void addUser(UserDTO userDTO) {
         log.info("Add user {}", userDTO);
-        System.out.println("User " + userDTO + " was added");
         userRepository.addUser(UserMapper.INSTANCE.fromDTO(userDTO));
     }
 
     @Override
     public synchronized void updateUser(UserDTO userDTO) {
         log.info("Update user {}", userDTO);
-        System.out.println("User " + userDTO + " was updated");
+        userRepository.updateUser(UserMapper.INSTANCE.fromDTO(userDTO));
     }
 
     @Override
     public synchronized void deleteUser(long id) {
         log.info("User was removed {}", id);
-        System.out.println("User " + id + " was removed");
+        userRepository.deleteUser(id);
     }
 }

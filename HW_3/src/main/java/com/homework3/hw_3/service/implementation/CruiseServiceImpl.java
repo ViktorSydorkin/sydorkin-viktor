@@ -25,34 +25,33 @@ public class CruiseServiceImpl implements CruiseService {
     }
 
     @Override
-    public synchronized void changeAvailability(long cruise_id) {
-        log.info("Changed availability {}", cruise_id);
-        cruiseRepository.changeAvailability(cruise_id);
+    public synchronized void changeAvailability(long cruiseId) {
+        log.info("Changed availability {}", cruiseId);
+        cruiseRepository.changeAvailability(cruiseId);
     }
 
     @Override
     public void addCruise(CruiseDTO cruiseDTO) {
         log.info("Add cruise {}", cruiseDTO);
-        System.out.println(cruiseDTO + "was added");
         cruiseRepository.addCruise(CruiseMapper.INSTANCE.fromDTO(cruiseDTO));
     }
 
     @Override
-    public CruiseDTO getCruiseById(long cruise_id) {
-        log.info("Get cruise by id {}", cruise_id);
-        return CruiseMapper.INSTANCE.toDTO(cruiseRepository.getCruiseById(cruise_id));
+
+    public CruiseDTO getCruiseById(long cruiseId) {
+        log.info("Get cruise by id {}", cruiseId);
+        return CruiseMapper.INSTANCE.toDTO(cruiseRepository.getCruiseById(cruiseId));
     }
 
     @Override
     public synchronized void updateCruise(CruiseDTO cruiseDTO) {
         log.info("Cruise was updated {}", cruiseDTO);
-        System.out.println("Cruise " + cruiseDTO + "was updated");
         cruiseRepository.updateCruise(CruiseMapper.INSTANCE.fromDTO(cruiseDTO));
     }
 
     @Override
-    public synchronized void deleteCruise(long cruise_id) {
-        log.info("Cruise was removed {}", cruise_id);
-        System.out.println("Cruise " + cruise_id + "was removed");
+    public synchronized void deleteCruise(long cruiseId) {
+        log.info("Cruise was removed {}", cruiseId);
+        cruiseRepository.deleteCruise(cruiseId);
     }
 }
